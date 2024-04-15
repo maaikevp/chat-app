@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, TextInput, ImageBackground } from 'react-native';
 
+
 const Start = ({ navigation }) => {
   const [name, setName] = useState('');
   const [background, setBackground] = useState('');
@@ -13,17 +14,15 @@ const Start = ({ navigation }) => {
       <ImageBackground source={image} style={styles.bgImage} resizeMode="cover">
         <Text style={styles.appTitle}>Welcome to Chat!</Text>
         <View style={styles.box}>
-
+          {/* Type username here */}
           <TextInput
             style={styles.textInput}
             value={name}
             onChangeText={setName}
             placeholder='Type your username here'
           />
-
+          {/* Choose backgroundcolor from 4 options */}
           <Text style={styles.chooseBackgroundColor}>Choose a background color:</Text>
-
-
           <View style={styles.colorButtonsBox}>
             {colors.map((color, index) => (
               <TouchableOpacity
@@ -33,7 +32,7 @@ const Start = ({ navigation }) => {
               />
             ))}
           </View>
-
+          {/* Button to confirm username and move over to chatscreen */}
           <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat', { name: name, background: background })}>
             <Text style={styles.buttonText}>Start Chatting</Text>
           </TouchableOpacity>
@@ -42,6 +41,7 @@ const Start = ({ navigation }) => {
     </View >
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
     width: '88%',
     padding: 5,
     margin: 3
-
   },
   buttonText: {
     fontSize: 16,

@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+// Name and backgroundColor choice are imported from startpage
+
 const Chat = ({ route, navigation }) => {
     const { name, background } = route.params;
 
