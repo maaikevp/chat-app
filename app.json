@@ -25,6 +25,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5e0e208a-dcbe-421b-9d21-4e6aa947bfa4"
+      }
+    },
+    "expo": {
+      "web": {
+        "bundler": "metro"
+      }
+    },
+    "owner": "maaikevp"
   }
 }
