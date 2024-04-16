@@ -20,6 +20,9 @@ const Start = ({ navigation }) => {
             value={name}
             onChangeText={setName}
             placeholder='Type your username here'
+            accessible={true}
+            accessibilityLabel="Type username"
+            accessibilityHint="Input username needed"
           />
           {/* Choose backgroundcolor from 4 options */}
           <Text style={styles.chooseBackgroundColor}>Choose a background color:</Text>
@@ -29,11 +32,17 @@ const Start = ({ navigation }) => {
                 key={index}
                 style={[styles.colorButton, { backgroundColor: color }, background === color && styles.selected]}
                 onPress={() => setBackground(color)}
+                accessible={true}
+                accessibilityLabel="Choose background color"
+                accessibilityHint="Input background color needed"
               />
             ))}
           </View>
           {/* Button to confirm username and move over to chatscreen */}
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat', { name: name, background: background })}>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat', { name: name, background: background })}
+            accessible={true}
+            accessibilityLabel="Button to enter chat-app"
+            accessibilityHint="Enter the chat-app">
             <Text style={styles.buttonText}>Start Chatting</Text>
           </TouchableOpacity>
         </View>
