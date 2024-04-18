@@ -1,13 +1,26 @@
 import { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, TextInput, ImageBackground } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, TextInput, ImageBackground, Alert } from 'react-native';
+import { getAuth, signInAnonymously } from "firebase/auth";
 
 
 const Start = ({ navigation }) => {
+  const auth = getAuth();
   const [name, setName] = useState('');
   const [background, setBackground] = useState('');
   const colors = ['#090C08', '#474056', '#8A95A5', '#B9C6AE'];
 
   const image = require('../images/Background-image.png');
+
+  const signInUser = () => {
+    signInAnonymously(auth)
+      .then(result => {
+        navigation.navigate("Chat", { name: name, background: background, userID: result.user.uid });
+        Alert.alert("Signed in Successfully!");
+      })
+      .catch((error) => {
+        Alert.alert("Unable to sign in, try later again.");
+      })
+  }
 
   return (
     <View style={styles.container}>
@@ -39,7 +52,7 @@ const Start = ({ navigation }) => {
             ))}
           </View>
           {/* Button to confirm username and move over to chatscreen */}
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Chat', { name: name, background: background })}
+          <TouchableOpacity style={styles.button} onPress={signInUser}
             accessible={true}
             accessibilityLabel="Button to enter chat-app"
             accessibilityHint="Enter the chat-app">
