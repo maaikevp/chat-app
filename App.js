@@ -2,22 +2,40 @@
 import Start from './components/Start';
 import Chat from './components/Chat';
 
+import { useState, useEffect } from 'react';
+
 // import react Navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, Alert } from 'react-native';
 
 // import Firestore
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, disableNetwork, enableNetwork } from "firebase/firestore";
 import { initializeApp, firebaseConfig } from 'firebase/app';
+
+// Netinfo 
+import { useNetInfo } from "@react-native-community/netinfo";
 
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(["AsyncStorage has been extracted from"])
-
 LogBox.ignoreAllLogs();
 
 
+
 const App = () => {
+
+  const connectionStatus = useNetInfo();
+
+  useEffect(() => {
+    if (connectionStatus.isConnected === false) {
+      Alert.alert("Connection Lost!");
+      disableNetwork(db);
+    } else if (connectionStatus.isConnected === true) {
+      enableNetwork(db);
+    }
+  }, [connectionStatus.isConnected]);
+
+
   const firebaseConfig = {
     apiKey: "AIzaSyAs8ICmZ_JP-5QWwzcCx3_DibNEdFHIwss",
     authDomain: "chat-app-2347c.firebaseapp.com",
@@ -27,15 +45,6 @@ const App = () => {
     appId: "1:811477904906:web:3db246b7cdcfefbfc6b9f3"
   };
 
-  // const firebaseConfig = {
-  //   apiKey: process.env.EXPO_PUBLIC_API_KEY,
-  //   authDomain: process.env.EXPO_PUBLIC_AUTH_DOMAIN,
-  //   projectId: process.env.EXPO_PUBLIC_PROJECT_ID,
-  //   storageBucket: process.env.EXPO_PUBLIC_STORAGE_BUCKET,
-  //   messagingSenderId: process.env.EXPO_PUBLIC_MESSAGING_SENDER_ID,
-  //   appId: process.env.EXPO_PUBLIC_APP_ID,
-  // };
-
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
@@ -44,6 +53,7 @@ const App = () => {
 
   // Create the navigator
   const Stack = createNativeStackNavigator();
+
 
 
   return (
@@ -57,7 +67,7 @@ const App = () => {
         />
         <Stack.Screen
           name="Chat">
-          {(props) => <Chat db={db} {...props} />}
+          {props => <Chat isConnected={connectionStatus.isConnected} db={db} {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>

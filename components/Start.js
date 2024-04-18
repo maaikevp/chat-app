@@ -19,8 +19,8 @@ const Start = ({ navigation }) => {
       })
       .catch((error) => {
         Alert.alert("Unable to sign in, try later again.");
-      })
-  }
+      });
+  };
 
   return (
     <View style={styles.container}>
