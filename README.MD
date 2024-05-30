@@ -18,7 +18,7 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
 
 2. Install Expo:
 
-    npm install -g expo-cli
+        npm install -g expo-cli
 
 3. Expo Go App
 
@@ -31,13 +31,15 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
 5. To log in to your Expo account for expo-cli in the terminal/Powershell, run expo login and go through the login process. 
 
 6. Create a new Expo project 
-    * by entering (For future projects, you’d change “hello-world” to the new name of your app):
+    * by entering:
 
-    npx create-expo-app hello-world --template     
+        npx create-expo-app hello-world --template     
+    
+    For future projects, you’d change “hello-world” to the new name of your app.
 
     * After the initialization is complete, go to your project’s directory using cd hello-world and start Expo with: 
     
-    npx expo start
+        npx expo start
 
 7. Google Firestore/Firebase
     * create an account and a new project
