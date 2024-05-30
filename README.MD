@@ -5,6 +5,9 @@ A messaging/chat app for mobile devices written in React Native. The app provide
 
 
 ## Programs and systems
+
+* Terminal and Node are needed, and Expo and Expo CLI, as this is the platform you’ll use to build your app:
+
     * React Native: Framework for building mobile applications using JavaScript and React.
     * Expo and Expo Go: Development platform for building React Native applications.
     * Android Studio: Emulator to test the app
@@ -12,7 +15,7 @@ A messaging/chat app for mobile devices written in React Native. The app provide
 
 
 ## Setup
-Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll use to build your app;
+
 
 1. Before installing Expo, ensure you have a suitable version of Node installed.
 
@@ -42,17 +45,18 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
         npx expo start
 
 7. Google Firestore/Firebase
-    * create an account and a new project
-    * obtain the configuration code, and add it to App.js:
-    * set up the database under build --> Firestore Database
-    * activate storage
-    * change rules to: allow read, write: if true
+    * Create an account and a new project
+    * Obtain the configuration code, and add it to App.js:
+    * Set up the database under build --> Firestore Database
+    * Activate storage
+    * Change rules to: allow read, write: if true
 
 
 8. Testing Options
     * Expo App: download and connect the expo app on your mobile device
     * Android Studio (android)
     * Xcode (iOS)
+
 
 
 Screenshot of the app:
