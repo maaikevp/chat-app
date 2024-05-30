@@ -5,10 +5,10 @@ A messaging/chat app for mobile devices written in React Native. The app provide
 
 
 ## Programs and systems
-React Native: Framework for building mobile applications using JavaScript and React.
-Expo and Expo Go: Development platform for building React Native applications.
-Android Studio: Emulator to test the app
-Firebase: database storage
+    * React Native: Framework for building mobile applications using JavaScript and React.
+    * Expo and Expo Go: Development platform for building React Native applications.
+    * Android Studio: Emulator to test the app
+    * Firebase: database storage
 
 
 ## Setup
@@ -18,35 +18,36 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
 
 2. Install Expo:
 
-npm install -g expo-cli
+        npm install -g expo-cli
 
 3. Expo Go App
-Next, you’ll need the Expo Go app for your phone to run your project on. Search for the Expo Go app in the relevant app store for your device (iOS or Android), and install it.
+
+        Next, you’ll need the Expo Go app for your phone to run your project on. Search for the Expo Go app in the relevant app store for your device (iOS or Android), and install it.
 
 4. Create an Expo account: https://expo.dev/
 
-Documentation: https://docs.expo.dev/more/expo-cli/
+        Documentation: https://docs.expo.dev/more/expo-cli/
 
 5. To log in to your Expo account for expo-cli in the terminal/Powershell, run expo login and go through the login process. 
 
-6. Create a new Expo project by entering:
+6. Create a new Expo project by entering (For future projects, you’d change “hello-world” to the new name of your app):
 
-npx create-expo-app hello-world --template     (For future projects, you’d change “hello-world” to the new name of your app)
+        npx create-expo-app hello-world --template     
 
-After the initialization is complete, go to your project’s directory using cd hello-world and start Expo with: npx expo start
+        After the initialization is complete, go to your project’s directory using cd hello-world and start Expo with: npx expo start
 
 7. Google Firestore/Firebase
-create an account and a new project
-obtain the configuration code, and add it to App.js:
-set up the database under build --> Firestore Database
-activate storage
-change rules to: allow read, write: if true
+    * create an account and a new project
+    * obtain the configuration code, and add it to App.js:
+    * set up the database under build --> Firestore Database
+    * activate storage
+    * change rules to: allow read, write: if true
 
 
 8. Testing Options
-download and connect the expo app on your mobile device
-Android Studio (android)
-Xcode (iOS)
+    * Expo App: download and connect the expo app on your mobile device
+    * Android Studio (android)
+    * Xcode (iOS)
 
 
 ## Dependencies:
