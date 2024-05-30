@@ -18,23 +18,26 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
 
 2. Install Expo:
 
-        npm install -g expo-cli
+    npm install -g expo-cli
 
 3. Expo Go App
 
-        Next, you’ll need the Expo Go app for your phone to run your project on. Search for the Expo Go app in the relevant app store for your device (iOS or Android), and install it.
+    * Next, you’ll need the Expo Go app for your phone to run your project on. Search for the Expo Go app in the relevant app store for your device (iOS or Android), and install it.
 
-4. Create an Expo account: https://expo.dev/
-
-        Documentation: https://docs.expo.dev/more/expo-cli/
+4. Create an Expo account: 
+    * https://expo.dev/
+    * ExpoDocumentation: https://docs.expo.dev/more/expo-cli/
 
 5. To log in to your Expo account for expo-cli in the terminal/Powershell, run expo login and go through the login process. 
 
-6. Create a new Expo project by entering (For future projects, you’d change “hello-world” to the new name of your app):
+6. Create a new Expo project 
+    * by entering (For future projects, you’d change “hello-world” to the new name of your app):
 
-        npx create-expo-app hello-world --template     
+    npx create-expo-app hello-world --template     
 
-        After the initialization is complete, go to your project’s directory using cd hello-world and start Expo with: npx expo start
+    * After the initialization is complete, go to your project’s directory using cd hello-world and start Expo with: 
+    
+    npx expo start
 
 7. Google Firestore/Firebase
     * create an account and a new project
