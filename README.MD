@@ -25,7 +25,7 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
     * Next, you’ll need the Expo Go app for your phone to run your project on. Search for the Expo Go app in the relevant app store for your device (iOS or Android), and install it.
 
 4. Create an Expo account: 
-    * https://expo.dev/
+    * Expo website: https://expo.dev/
     * ExpoDocumentation: https://docs.expo.dev/more/expo-cli/
 
 5. To log in to your Expo account for expo-cli in the terminal/Powershell, run expo login and go through the login process. 
@@ -54,6 +54,8 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
     * Android Studio (android)
     * Xcode (iOS)
 
+
+Screenshot of the app:
 
 ![Capture-chat-app](images/Capture-chat-app.JPG)
 
