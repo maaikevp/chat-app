@@ -20,6 +20,7 @@ const Start = ({ navigation }) => {
 
   const image = require('../images/Background-image.png');
 
+  // Sign-in functionality
   const signInUser = () => {
     signInAnonymously(auth)
       .then(result => {
@@ -72,6 +73,7 @@ const Start = ({ navigation }) => {
   );
 }
 
+// Stylesheet
 const styles = StyleSheet.create({
   bgImage: {
     flex: 1,

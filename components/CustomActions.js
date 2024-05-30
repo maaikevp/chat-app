@@ -8,7 +8,7 @@ import { uploadBytes, ref, getDownloadURL } from "firebase/storage";
 const CustomActions = ({ wrapperStyle, iconTextStyle, onSend, storage, id }) => {
     const actionSheet = useActionSheet();
 
-
+    // Custom actions-menu
     const onActionPress = () => {
         const options = ['Choose From Library', 'Take Picture', 'Send Location', 'Cancel']; //'Record Sound',
         const cancelButtonIndex = options.length - 1;

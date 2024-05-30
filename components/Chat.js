@@ -35,7 +35,7 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
             });
         } else loadCachedMessages();
 
-        // Clean up code
+        // Cleanup code
         return () => {
             if (unsubMessages) unsubMessages();
         }
@@ -105,7 +105,7 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
 
 
 
-    // Set user name
+    // Set username
     useEffect(() => {
         navigation.setOptions({ title: name });
     }, []);
