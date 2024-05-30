@@ -55,7 +55,7 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll u
     * Xcode (iOS)
 
 
-![Capture-chat-app](/Capture-chat-app.JPG)
+![Capture-chat-app](images/Capture-chat-app.JPG)
 
 ## Dependencies:
 
