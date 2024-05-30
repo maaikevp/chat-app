@@ -1,40 +1,26 @@
+import { useNetInfo } from "@react-native-community/netinfo";
+import { useEffect } from 'react';
+import { StyleSheet, LogBox, Alert } from 'react-native';
+LogBox.ignoreLogs(["AsyncStorage has been extracted from"]);
+
 // import the screens
 import Start from './components/Start';
 import Chat from './components/Chat';
 
-import { useState, useEffect } from 'react';
+// import Firestore
+import { initializeApp } from "firebase/app";
+import { getFirestore, disableNetwork, enableNetwork } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 // import react Navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ImageBackground, StyleSheet, Text, View, Alert } from 'react-native';
 
-// import Firestore
-import { getFirestore, disableNetwork, enableNetwork } from "firebase/firestore";
-import { initializeApp, firebaseConfig } from 'firebase/app';
-
-// Netinfo 
-import { useNetInfo } from "@react-native-community/netinfo";
-
-import { LogBox } from 'react-native';
-LogBox.ignoreLogs(["AsyncStorage has been extracted from"])
-LogBox.ignoreAllLogs();
-
-
+// Create the navigator
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-
   const connectionStatus = useNetInfo();
-
-  useEffect(() => {
-    if (connectionStatus.isConnected === false) {
-      Alert.alert("Connection Lost!");
-      disableNetwork(db);
-    } else if (connectionStatus.isConnected === true) {
-      enableNetwork(db);
-    }
-  }, [connectionStatus.isConnected]);
-
 
   const firebaseConfig = {
     apiKey: "AIzaSyAs8ICmZ_JP-5QWwzcCx3_DibNEdFHIwss",
@@ -45,16 +31,23 @@ const App = () => {
     appId: "1:811477904906:web:3db246b7cdcfefbfc6b9f3"
   };
 
+
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
   // Initialize Cloud Firestore and get a reference to the service
-  const db = getFirestore(app)
+  const db = getFirestore(app);
+  const storage = getStorage(app);
 
-  // Create the navigator
-  const Stack = createNativeStackNavigator();
-
-
+  // Network connectivity status
+  useEffect(() => {
+    if (connectionStatus.isConnected === false) {
+      Alert.alert("Connection Lost!!");
+      disableNetwork(db);
+    } else if (connectionStatus.isConnected === true) {
+      enableNetwork(db);
+    }
+  }, [connectionStatus.isConnected]);
 
   return (
     <NavigationContainer>
@@ -66,15 +59,22 @@ const App = () => {
           component={Start}
         />
         <Stack.Screen
-          name="Chat">
-          {props => <Chat isConnected={connectionStatus.isConnected} db={db} {...props} />}
+          name="Chat"
+        >
+          {props => <Chat isConnected={connectionStatus.isConnected} db={db} storage={storage} {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default App;
-
-
