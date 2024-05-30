@@ -12,7 +12,7 @@ A messaging/chat app for mobile devices written in React Native. The app provide
 
 
 ## Setup
-Needed: Terminal and Node, Expo and Expo CLI, as this is the platform used to build this app.
+Needed: Terminal and Node, Expo and Expo CLI, as this is the platform you’ll use to build your app;
 
 1. Before installing Expo, ensure you have a suitable version of Node installed.
 
@@ -24,9 +24,9 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform used to bu
 
     * Next, you’ll need the Expo Go app for your phone to run your project on. Search for the Expo Go app in the relevant app store for your device (iOS or Android), and install it.
 
-4. Create an Expo account, and look at their website for information on project creation: 
-    * Expo website: https://expo.dev/
-    * Expo Documentation: https://docs.expo.dev/more/expo-cli/
+4. Create an Expo account: 
+    * https://expo.dev/
+    * ExpoDocumentation: https://docs.expo.dev/more/expo-cli/
 
 5. To log in to your Expo account for expo-cli in the terminal/Powershell, run expo login and go through the login process. 
 
@@ -41,25 +41,21 @@ Needed: Terminal and Node, Expo and Expo CLI, as this is the platform used to bu
     
         npx expo start
 
-    You can use the gifted chat library for chat functions and design.
-
 7. Google Firestore/Firebase
-    * Create an account and a new project
-    * Obtain the configuration code, and add it to App.js:
-    * Set up the database under build --> Firestore Database
-    * Activate storage
-    * Change rules to: allow read, write: if true
+    * create an account and a new project
+    * obtain the configuration code, and add it to App.js:
+    * set up the database under build --> Firestore Database
+    * activate storage
+    * change rules to: allow read, write: if true
 
 
 8. Testing Options
-    * Expo App: download and connect to the Expo app on your mobile device
+    * Expo App: download and connect the expo app on your mobile device
     * Android Studio (android)
     * Xcode (iOS)
 
 
-Screenshot of app:
-
-![Capture-chat-app](/Capture-chat-app.JPG)
+![Capture-chat-app](images/Capture-chat-app.JPG)
 
 ## Dependencies:
 
